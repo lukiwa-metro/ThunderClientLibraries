@@ -15,6 +15,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+option(AVMONITOR
+        "Include the avmonitor library." OFF)
 option(BLUETOOTHAUDIOSINK
         "Include the bluetoothaudiosink library." OFF)
 option(PROTOCOLS
@@ -37,6 +39,10 @@ option(CRYPTOGRAPHY
         "Include the cryptography library." OFF)
 option(LOCALTRACER
         "Header only library to locally print traces coming from Messaging without the need of running Thunder/WPEFramework." OFF)
+
+if(AVMONITOR)
+    add_subdirectory(avmonitor)
+endif()
 
 if(BLUETOOTHAUDIOSINK)
     add_subdirectory(bluetoothaudiosink)
